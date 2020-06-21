@@ -1,0 +1,89 @@
+#%RAML 1.0
+title: DIY-3
+
+types:
+  Account: !include resources/accounts.raml
+
+/accounts:
+  get:
+    headers:
+      Requester-ID: string
+    queryParameters:
+      type:
+        required: true
+        enum:
+          - personal
+          - business
+      name:
+        required: false
+      country:
+        required: false
+    responses:
+      200:
+        body:
+          application/json:
+            type: Account[]
+            examples:
+              output: !include examples/accountExample.raml
+  post:
+    headers:
+      Requester-ID: string
+  
+  /{ID}:
+    get:
+      queryParameters:
+        type:
+          required: false
+          enum:
+          - personal
+          - business
+      responses:
+        200:
+          body:
+            application/json:
+              type: Account[]
+              examples:
+                output: !include examples/accountExample.raml
+    put:
+      description: replace account
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                account replaced (but not really)
+        400:
+          body:
+            application/json:
+              example:
+                replacing failed
+          
+    patch:
+      description: modify account
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                account modified (but not really)
+        400:
+          body:
+            application/json:
+              example:
+                modifying failed
+    delete:
+      description: delete account
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                account deleted (but not really)       
+        400:
+          body:
+            application/json:
+              example:
+                deleting failed       
+              
+
+            

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 5039,
+    "firstName": "Liam",
+    "lastName": "Skop",
+    "address": "77 Geary Street, San Francisco",
+    "postal": "94108",
+    "country": "United States",
+    "creationDate": "2017/07/26 T23:45:34 Z+0:00",
+    "accountType": "personal",
+    "miles": 1000
+  },
+  {
+    "id": 3078,
+    "firstName": "Toby",
+    "lastName": "Platt",
+    "address": "50 Hamilton Avenue, Chicago",
+    "postal": "10485",
+    "country": "United States",
+    "creationDate": "2014/03/12 T12:34:23 Z+0:00",
+    "accountType": "personal",
+    "miles": 1434
+  }
+]

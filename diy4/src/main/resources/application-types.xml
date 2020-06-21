@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="Account" format="json">
+      <types:shape format="weave" example="examples/accounts - Copy.json"><![CDATA[%dw 2.0
+
+type Account = Array<{|  id: Number {"typeId": "int"},   firstName: String,   lastName: String,   address: String,   postal: String,   country: String,   creationDate: String,   accountType: String,   miles: Number {"typeId": "int"}|}> {"example": "[{\\\"id\\\":5039,\\\"firstName\\\":\\\"Liam\\\",\\\"lastName\\\":\\\"Skop\\\",\\\"address\\\":\\\"77 Geary Street, San Francisco\\\",\\\"postal\\\":\\\"94108\\\",\\\"country\\\":\\\"United States\\\",\\\"creationDate\\\":\\\"2017\\/07\\/26 T23:45:34 Z+0:00\\\",\\\"accountType\\\":\\\"personal\\\",\\\"miles\\\":1000},{\\\"id\\\":3078,\\\"firstName\\\":\\\"Toby\\\",\\\"lastName\\\":\\\"Platt\\\",\\\"address\\\":\\\"50 Hamilton Avenue, Chicago\\\",\\\"postal\\\":\\\"10485\\\",\\\"country\\\":\\\"United States\\\",\\\"creationDate\\\":\\\"2014\\/03\\/12 T12:34:23 Z+0:00\\\",\\\"accountType\\\":\\\"personal\\\",\\\"miles\\\":1434}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#92251f9a-0aba-488c-9457-35948c30dc77">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="Account"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
